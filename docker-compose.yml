@@ -9,6 +9,8 @@ services:
       - "3001:3001"
     depends_on:
       - db
+    networks:
+      - mynetwork
 
   frontend:
     build:
@@ -22,6 +24,8 @@ services:
     tty: true
     depends_on:
       - backend
+    networks:
+      - mynetwork
 
   db:
     image: "mongo"
@@ -37,5 +41,11 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+    networks:
+      - mynetwork
+
 volumes:
   data:
+
+networks:
+  mynetwork:
