@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
-
 import "../SignUp.css";
 // import axios from 'axios';
 
